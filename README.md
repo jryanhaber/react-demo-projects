@@ -2,7 +2,7 @@
 
 Set up this project to document some sample code since I have been focused in private repos for over 5 years.
 
-
+Check the commit logs and commit messages for an up to date inventory of skills demonstrated
 
 
 
