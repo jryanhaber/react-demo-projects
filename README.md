@@ -1,3 +1,14 @@
+# Project Specs
+
+Set up this project to document some sample code since I have been focused in private repos for over 5 years.
+
+
+
+
+
+# Template used
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
