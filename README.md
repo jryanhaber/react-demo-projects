@@ -16,7 +16,8 @@ useState has other functions like activeIndex and setActiveIndex
 
 Old school methods for writing this, and then gradual refactors
 
-```const things = useState(null)
+```
+const things = useState(null)
 const activeIndex = things[0]
 const setActiveIndex = things[1]
 ```
@@ -25,7 +26,8 @@ const setActiveIndex = things[1]
 
  - but you can also skip the first step, and direcly assign the variables through array destructuring
 
-``` [ activeIndex: activeIndex, setActiveIndex:setActiveIndex ] = useState(null)
+```
+[ activeIndex: activeIndex, setActiveIndex:setActiveIndex ] = useState(null)
 ```
   - plus, since the names of the variables are identical in the new array to the function names, you can even skip the assignment because
 
@@ -38,7 +40,8 @@ const setActiveIndex = things[1]
 
    so the entire statement can be reduced further to
 
-```   [ activeIndex, setActiveIndex ] = useState(null)
+```   
+[ activeIndex, setActiveIndex ] = useState(null)
 ```
    Which pulls useState from 'react', pulls activeIndex and setActiveIndex from useState, and assigns those functions by name to whatever functions are then downstream from the declaration.  
 
