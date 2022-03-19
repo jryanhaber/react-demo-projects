@@ -31,7 +31,6 @@ const Search = () => {
        }
      }, 500)
      // return cleanup function as intrinsic option for function call before re render of component on change
-     return (() => )
   }, [term]);
 
 
