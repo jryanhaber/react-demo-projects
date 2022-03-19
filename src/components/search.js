@@ -5,6 +5,9 @@ const Search = () => {
   const [term, setTerm] = useState("programming");
   const [results, setResults] = useState([]);
 
+
+
+
   useEffect(() => {
     const search = async () => {
       const {data} = await axios.get("https://en.wikipedia.org/w/api.php", {
@@ -18,11 +21,49 @@ const Search = () => {
       });
 
       setResults(data.query.search);
+      console.log(data.query.search)
     };
-    search();
+
+// define timeout id to cancel if resetting
+     const timeoutId = setTimeout(() =>{
+       if(term){
+         search()
+       }
+     }, 500)
+     // return cleanup function as intrinsic option for function call before re render of component on change
+     return (() => )
   }, [term]);
 
-  const url = "en.wikipedia.org/w/api.php";
+
+
+
+
+
+    const listItems = results.map((result) =>{
+
+      return (
+        <div className="item" key={result.pageid}>
+
+        <div className="right floated content">
+          <a
+          href={`https://en.wikipedia.org?curid=${result.pageid}`}
+          className="ui button">Go</a>
+        </div>
+        <div className="content">
+        <div className="header">
+        {result.title}
+
+        </div>
+          <span dangerouslySetInnerHTML= {{__html:result.snippet}}></span>
+
+        </div>
+        <br/>
+    </div>
+    )
+  }
+);
+
+
 
   return (
     <div>
@@ -52,6 +93,11 @@ const Search = () => {
               type="text"
               placeholder="Search..."
             />
+          </div>
+          <br/>
+
+          <div className="ui container">
+          {listItems}
           </div>
         </div>
       </div>
